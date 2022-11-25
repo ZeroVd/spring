@@ -11,13 +11,15 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Application {
 	public static void main(String[] args) {
-		AbstractApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
-		System.out.println(context.getEnvironment().getSystemProperties());
-		System.out.println(context);
+		MyApplicationContext context = new MyApplicationContext("bean-${username}.xml");
 		A a = context.getBean("a", A.class);
-		B b = context.getBean("b", B.class);
-		System.out.println(a);
-		System.out.println(b);
+		// AbstractApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
+		// System.out.println(context.getEnvironment().getSystemProperties());
+		// System.out.println(context);
+		// A a = context.getBean("a", A.class);
+		// B b = context.getBean("b", B.class);
+		// System.out.println(a);
+		// System.out.println(b);
 		// good
 	}
 }
